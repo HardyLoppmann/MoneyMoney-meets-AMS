@@ -1,0 +1,6 @@
+
+# Compiled Lua sources
+luac.out
+
+# OS X foobar
+.DS_Store
