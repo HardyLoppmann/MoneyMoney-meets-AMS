@@ -1,6 +1,8 @@
-
 # Compiled Lua sources
 luac.out
 
 # OS X foobar
 .DS_Store
+
+# Exported HTML files
+*.html
