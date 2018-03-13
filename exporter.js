@@ -313,8 +313,8 @@
     var rows = document.querySelectorAll('tbody > tr');
     rows.forEach(function(row) {
       var categoryCode = row.querySelectorAll('[name=kategorie]')[0].value;
-      var amount = accounting.unformat(row.children[3].innerText);
-      var country = row.children[4].innerText;
+      var amount = accounting.unformat(row.children[4].innerText);
+      var country = row.children[5].innerText;
       var categoryMap = (payments.has(country)) ? payments.get(country) : payments.set(country, new Map()).get(country);
       var balance = (categoryMap.has(categoryCode)) ? categoryMap.get(categoryCode) : categoryMap.set(categoryCode, new Balance()).get(categoryCode);
       balance.setAmount(amount);
@@ -348,11 +348,11 @@
         var category = categoryLabels[categoryCode];
 
         if (isAmountValid(income)) {
-          rows.push([country, category, accounting.formatMoney(income, 'EUR ', 2, '.', ',')]);
+          rows.push([country, category, accounting.formatMoney(income, '', 0, '', '')]);
         }
 
         if (isAmountValid(expenditure)) {
-          rows.push([country, category, accounting.formatMoney(expenditure, 'EUR ', 2, '.', ',')]);
+          rows.push([country, category, accounting.formatMoney(expenditure, '', 0, '', '') * -1]);
         }
       });
     });
@@ -375,10 +375,8 @@
   };
 
   function createCSV(data) {
-    var header = [["Land", "Kategorie", "Betrag"]];
-    var rows = header.concat(data);
     var csvContent = "data:text/csv;charset=utf-8,";
-    rows.forEach(function(rowArray){
+    data.forEach(function(rowArray){
        let row = rowArray.join(";");
        csvContent += row + "\r\n";
     });
