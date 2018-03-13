@@ -313,10 +313,12 @@
     var rows = document.querySelectorAll('tbody > tr');
     rows.forEach(function(row) {
       var categoryCode = row.querySelectorAll('[name=kategorie]')[0].value;
+      var ba = row.querySelectorAll('[name=ba]')[0].value;
       var amount = accounting.unformat(row.children[4].innerText);
       var country = row.children[5].innerText;
       var categoryMap = (payments.has(country)) ? payments.get(country) : payments.set(country, new Map()).get(country);
-      var balance = (categoryMap.has(categoryCode)) ? categoryMap.get(categoryCode) : categoryMap.set(categoryCode, new Balance()).get(categoryCode);
+      var baMap = (categoryMap.has(ba)) ? categoryMap.get(ba) : categoryMap.set(ba, new Map()).get(ba);
+      var balance = (baMap.has(categoryCode)) ? baMap.get(categoryCode) : baMap.set(categoryCode, new Balance()).get(categoryCode);
       balance.setAmount(amount);
     });
     return payments;
@@ -341,22 +343,22 @@
   function convertToCSV(tableData) {
     var rows = [];
 
-    tableData.forEach(function(categoryMap, country){
-      categoryMap.forEach(function(balance, categoryCode) {
-        var income = balance.income;
-        var expenditure = balance.expenditure;
-        var category = categoryLabels[categoryCode];
+    tableData.forEach(function(baMap, country) {
+      baMap.forEach(function(categoryMap, ba) {
+        categoryMap.forEach(function(balance, categoryCode) {
+          var income = balance.income;
+          var expenditure = balance.expenditure;
+          var category = categoryLabels[categoryCode];
+          if (isAmountValid(income)) {
+            rows.push([ba, categoryCode, category, country, accounting.formatMoney(income, '', 0, '', '')]);
+          }
 
-        if (isAmountValid(income)) {
-          rows.push([country, category, accounting.formatMoney(income, '', 0, '', '')]);
-        }
-
-        if (isAmountValid(expenditure)) {
-          rows.push([country, category, accounting.formatMoney(expenditure, '', 0, '', '') * -1]);
-        }
+          if (isAmountValid(expenditure)) {
+            rows.push([ba, categoryCode, category, country, accounting.formatMoney(expenditure, '', 0, '', '') * -1]);
+          }
+        });
       });
     });
-
     return rows;
   };
 
