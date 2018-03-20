@@ -31,7 +31,25 @@ Wenn nun in _MoneyMoney_ Umsätze ausgewählt werden (in der Regel immer ein Mon
 
 ## Transaktionen kategorisieren und CSV Datei erzeugen
 
+Die dort erstelle Tabelle hat folgende Struktur:
 
+|Kategorie|BA|Datum|Buchung|Betrag|Land|
+|--
+|573|1|01.02.2018|Firma xyz R20170001|13500.00 EUR|FR|
+|573|2|06.02.2018|Firma zyx 0001/2017|-3000.00 EUR|AT|
+|...|||||||
+
+Per default wir die Kategorie **573** genommen, da die meisten Transaktionen  im Bereich der **EDV-Dienstleistung** liegen.
+Die Belegart(BA) wird mit **1** bzw. **2** vorbelegt, kann aber ggf. überschrieben werden:
+
+*   **1** = eingehende Zahlungen Dienstleistungen, Übertragungen, Warenverkehr
+*   **2** = ausgehende Zahlungen Dienstleistungen, Übertragungen, Warenverkehr
+*   **3** = eingehende Zahlungen Kapitalverkehr und Kapitalerträge
+*   **4** = ausgehende Zahlungen Kapitalverkehr und Kapitalerträge
+*   **5** = eingehende Zahlungen Transithandel Belegart
+*   **6** = ausgehende Zahlungen Transithandel
+
+Hier die die vollständige Liste: [Kennzahlen Liste mit Belegarten](https://www.bundesbank.de/Redaktion/DE/Downloads/Service/Meldewesen/Aussenwirtschaft/Schluessel/kennzahlenliste_mit_belegarten.pdf?__blob=publicationFile)
 
 ## Import im AMS
 
