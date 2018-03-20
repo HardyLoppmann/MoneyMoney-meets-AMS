@@ -5,10 +5,10 @@ MoneyMoney ist CSV Export für das Allgemeine Meldeportal Statistik (AMS) der Bu
 **MoneyMoney-meets-AMS** ist eine Erweiterung (Plugin, Extension) für das Online-Banking-Programm _[MoneyMoney](https://moneymoney-app.com)_ (macOS). Mit **MoneyMoney-meets-AMS** können Umsätze von einem oder mehreren in _MoneyMoney_ geführten Konten direkt in das Allgemeine Meldeportal Statistik (AMS) der Bundesbank importiert werden.
 
 Diese Implementierung bezieht sich nur auf die **Anlage Z 4** zur AWV „Zahlungen im Außenwirtschaftsverkehr“
-* Verwendung: Allgemeiner Meldevordruck für eingehende und ausgehende Zahlungen für Dienstleistungen, Transithandel, Warenverkehr und Kapitalverkehr
-* Meldefreigrenze: 12.500 €
-* Meldekreis: alle Meldepfichtigen
-* Abgabefrist: 7. Kalendertag nach Ende des Berichtsmonats
+*   Verwendung: Allgemeiner Meldevordruck für eingehende und ausgehende Zahlungen für Dienstleistungen, Transithandel, Warenverkehr und Kapitalverkehr
+*   Meldefreigrenze: 12.500 €
+*   Meldekreis: alle Meldepfichtigen
+*   Abgabefrist: 7. Kalendertag nach Ende des Berichtsmonats
 
 Quelle: [Erläuterungen zum Leistungsverzeichnis für die Zahlungsbilanz](https://www.bundesbank.de/Redaktion/DE/Downloads/Veroeffentlichungen/Statistische_Sonderveroeffentlichungen/Statso_7/statso_7_2013.pdf.pdf?__blob=publicationFile)
 
@@ -30,9 +30,6 @@ Wenn nun in _MoneyMoney_ Umsätze ausgewählt werden (in der Regel immer ein Mon
 **MoneyMoney-meets-AMS** exportiet anschließend alle Transaktionen in das Ausland gingen oder daher kamen und erstellt daraus eine HTML-Datei, diese muss im `$work directory` abgespeichert werden.
 
 ## Transaktionen kategorisieren und CSV Datei erzeugen
-
-TODO
-
 
 
 
