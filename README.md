@@ -34,7 +34,7 @@ Wenn nun in _MoneyMoney_ Umsätze ausgewählt werden (in der Regel immer ein Mon
 Die dort erstelle Tabelle hat folgende Struktur:
 
 |Kategorie|BA|Datum|Buchung|Betrag|Land|
-|--
+|--|--|--|--|--|--|
 |573|1|01.02.2018|Firma xyz R20170001|13500.00 EUR|FR|
 |573|2|06.02.2018|Firma zyx 0001/2017|-3000.00 EUR|AT|
 |...|||||||
