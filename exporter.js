@@ -350,11 +350,11 @@
           var expenditure = balance.expenditure;
           var category = categoryLabels[categoryCode];
           if (isAmountValid(income)) {
-            rows.push([ba, categoryCode, category, country, accounting.formatMoney(income, '', 0, '', '')]);
+            rows.push([ba, categoryCode, category, country, Math.round(income / 1000)]);
           }
 
           if (isAmountValid(expenditure)) {
-            rows.push([ba, categoryCode, category, country, accounting.formatMoney(expenditure, '', 0, '', '') * -1]);
+            rows.push([ba, categoryCode, category, country, Math.round(expenditure / 1000) * -1]);
           }
         });
       });
@@ -384,6 +384,8 @@
     });
     return csvContent;
   };
+
+
 
   function init () {
     appendButton();
