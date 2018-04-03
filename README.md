@@ -59,7 +59,7 @@ Hier ein Beispiel für Dienstleistungen:
 
 ## Import im AMS
 
-Die eben erstellt `data.csv` kann dann in der GUI des AMS imporiert werden. Done!
+Die eben erstellt `data.csv` kann dann in der GUI des AMS importiert werden, genau an der Stelle wo man sonst alle selbst aggregierten Werte eintragen muss. Done!
 
 ## ToDo
 *   `Daten einlesen` & `CSV downloaden` in einem Button
