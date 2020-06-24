@@ -49,7 +49,7 @@ Die Belegart(BA) wird mit **1** bzw. **2** vorbelegt, kann aber ebenfalls auch �
 *   **5** = eingehende Zahlungen Transithandel Belegart
 *   **6** = ausgehende Zahlungen Transithandel
 
-Hier die die vollständige Liste: [Kennzahlen Liste mit Belegarten](https://www.bundesbank.de/Redaktion/DE/Downloads/Service/Meldewesen/Aussenwirtschaft/Schluessel/kennzahlenliste_mit_belegarten.pdf?__blob=publicationFile)
+Hier die die vollständige Liste: [Kennzahlen Liste mit Belegarten](https://www.bundesbank.de/resource/blob/613062/2ea14b9b0da95ab05e544ff01d999e99/mL/kennzahlenliste-mit-belegarten-data.pdf)
 
 Nachdem alle Kategorien & Belegarten angepasst wurden mit `Daten einlesen` die Daten aus der HTML-Tabelle in eine interne Datenstruktur übernehmen.
 Dann kann mit `CSV downloaden` eine AMS kompatible CSV-Datei 'downloaden' bedeutet sie wird im Ordner `~/Downloads` als `data.csv` gespeichert.
